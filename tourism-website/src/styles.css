@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; font-family: 'Afacad'; }
+body { margin: 0; }
+
+
+@font-face {
+    font-family: 'Afacad';
+    src: url('assets/Afacad-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}

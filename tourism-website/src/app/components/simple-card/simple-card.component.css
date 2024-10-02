@@ -1,0 +1,87 @@
+.destination-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.destination-info {
+    padding: 20px;
+}
+
+.destination-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.destination-card {
+    width: 400px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 30px;
+    background-color: aliceblue;
+}
+
+.destination-description {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    text-align: justify;
+    overflow-y: hidden;
+    text-overflow: ellipsis;
+    height: 60px;
+    overflow-y: auto;
+}
+
+.price-description {
+    font-size: 1rem;
+    text-align: justify;
+
+}
+
+.no-people {
+    font-family: 'Afacad';
+    font-size: 1rem;
+}
+
+.discounted-price {
+    color: red;
+    margin-left: 5px;
+}
+
+.original-price {
+    margin-right: 5px;
+    text-decoration: line-through;
+}
+
+
+.date-description {
+    font-size: 1rem;
+    text-align: justify;
+    padding-bottom: 5px;
+}
+
+.promotion {
+    width: 400px;
+    border: 2px solid red;
+    border-color: brown;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 30px;
+    background-color: rgb(254, 233, 201);
+}
+
+.destination-card.reserved {
+    width: 400px;
+    border: 2px solid rgb(0, 0, 0);
+    border-color: rgb(0, 0, 0);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 30px;
+    background-color: rgb(168, 168, 168);
+}
+
+.destination-card.reserved .destination-image {
+    filter: grayscale(100%);
+}

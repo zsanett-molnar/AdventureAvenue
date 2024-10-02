@@ -1,0 +1,24 @@
+<router-outlet>
+    <mat-toolbar color="primary">
+        <button mat-button (click)="goToPage('')">AdventureAvenue</button>
+        <span class="spacer"></span>
+        <button mat-button (click)="goToPage('')">Home</button>
+        <button mat-button [matMenuTriggerFor]="destinationoptions">Destinations</button>
+        <mat-menu #destinationoptions="matMenu">
+            <button mat-menu-item (click)="goToPage('destinations/all')">All destinations</button>
+            <button mat-menu-item (click)="goToPage('destinations/promotions')">Promotions</button>
+        </mat-menu>
+        <button mat-button (click)="goToPage('contact')">Contact</button>
+        <button mat-button *ngIf="!verifyIfLoggedIn()" (click)="goToPage('login')">Authenticate</button>
+        <button mat-button [matMenuTriggerFor]="agentoptions" *ngIf="isAdmin()">Agent operations</button>
+        <mat-menu #agentoptions="matMenu">
+            <button mat-menu-item (click)="goToAdminPage()">CRUD operations</button>
+            <button mat-menu-item (click)="goToPage('reservations')">Reservations</button>
+        </mat-menu>
+        <button mat-button *ngIf="verifyIfLoggedIn()" (click)="logOut()">LogOut</button>
+        <mat-form-field>
+            <mat-label>Search for destinations</mat-label>
+            <input matInput placeholder=" Ex. Italy" (keyup)="onSearch($event)">
+        </mat-form-field>
+    </mat-toolbar>
+</router-outlet>

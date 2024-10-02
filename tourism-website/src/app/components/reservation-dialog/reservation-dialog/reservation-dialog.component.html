@@ -1,0 +1,21 @@
+<div class="dialog">
+    <h2 mat-dialog-title>Make a reservation for <strong>{{ currentUser }}</strong>?</h2>
+    <div>
+        <p><strong>Location: </strong> {{ data.destination.location }}</p>
+        <p><strong>Number of people: </strong> {{ selectedPeople }}</p>
+        <p><strong>Number of days: </strong> {{ numberOfDays }}</p>
+        <p><strong>Total price: </strong> {{ totalPrice }}</p>
+        <mat-form-field appearance="fill">
+            <mat-label>Number of People</mat-label>
+            <mat-select [(ngModel)]="selectedPeople" (selectionChange)="calculateTotalCost(data.destination)">
+                <mat-option *ngFor="let num of peopleOptions" [value]="num">{{num}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-dialog-actions>
+            <button mat-button (click)="dialogRef.close()">Cancel</button>
+            <button mat-button color="primary" (click)="makeReservation(data.destination)">Ok</button>
+        </mat-dialog-actions>
+    </div>
+</div>

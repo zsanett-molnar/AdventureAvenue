@@ -1,0 +1,56 @@
+<html>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+  integrity="sha512-nMM7kV22bNNz9Qc9USj47Dp1hwz+/1Sv9rW/3AjXabwSao6blF4B6kY1M3lIdhrj7VDk9f3wGl2Pb3Yq6QjQYA=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+<div class="booking-bar-wrapper">
+  <div class="booking-bar">
+    <div class="operations-container">
+      <mat-form-field appearance="fill">
+        <mat-label>Enter a date range</mat-label>
+        <mat-date-range-input [rangePicker]="picker">
+          <input matStartDate placeholder="Start date" [(ngModel)]="startDate" (dateInput)="addEvent('start', $event)">
+          <input matEndDate placeholder="End date" [(ngModel)]="endDate" (dateInput)="addEvent('end', $event)">
+        </mat-date-range-input>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-date-range-picker #picker></mat-date-range-picker>
+      </mat-form-field>
+
+
+      <mat-form-field appearance="fill">
+        <mat-label>Number of People</mat-label>
+        <mat-select [(ngModel)]="selectedPeople" (selectionChange)="filterDestinationsByPeople()">
+          <mat-option *ngFor="let num of peopleOptions" [value]="num">{{num}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+
+
+      <mat-checkbox *ngIf="showCheckbox" class="example-margin" color="primary" [(ngModel)]="promotionsOn">
+        <span>Promotions <i class="fas fa-percent"></i></span>
+      </mat-checkbox>
+
+    </div>
+  </div>
+</div>
+
+
+<div id="destination-container" class="destination-container">
+  <ng-container *ngIf="!promotionsOn">
+    <div class="row">
+      <div *ngFor="let destination of all_destinations" class="col">
+        <app-simple-card [destination]="destination"></app-simple-card>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="promotionsOn">
+    <div class="row">
+      <div *ngFor="let destination of promotions" class="col">
+        <app-simple-card [destination]="destination"></app-simple-card>
+      </div>
+    </div>
+  </ng-container>
+</div>
+
+
+</html>

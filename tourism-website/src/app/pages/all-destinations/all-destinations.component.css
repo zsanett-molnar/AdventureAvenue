@@ -1,0 +1,135 @@
+html,
+body {
+  font-family: 'Afacad';
+  background-color: rgb(205, 213, 224);
+}
+
+#destination-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background-color: rgb(205, 213, 224);
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.col {
+  flex: 0 0 calc(33.33% - 20px);
+  margin-bottom: 20px;
+}
+
+.destination-card {
+  width: 400px;
+
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 30px;
+  background-color: aliceblue;
+}
+
+.promotion-card {
+  width: 400px;
+  border: 2px solid red;
+  border-color: brown;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 30px;
+  background-color: rgb(254, 233, 201);
+}
+
+.destination-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.destination-info {
+  padding: 20px;
+}
+
+
+.destination-title {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.destination-description {
+  font-size: 1rem;
+  margin-bottom: 15px;
+  text-align: justify;
+  overflow-y: hidden;
+  text-overflow: ellipsis;
+  max-height: 60px;
+  overflow-y: auto;
+}
+
+.price-description {
+  font-size: 1rem;
+  text-align: justify;
+
+}
+
+.date-description {
+  font-size: 1rem;
+  text-align: justify;
+  padding-bottom: 5px;
+}
+
+.booking-bar-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.booking-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+
+  background-color: rgb(255, 255, 255);
+  width: 700px;
+  border-radius: 20px;
+  margin-top: 40px;
+}
+
+
+.operations-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-top: 21.6px;
+  padding-left: 21.6px;
+  width: 900px;
+}
+
+
+
+.mat-form-field {
+  margin-right: 10px;
+}
+
+.mat-checkbox {
+  margin-right: 10px;
+}
+
+.example-margin {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.promotion-text {
+  color: brown;
+  text-decoration: line-through;
+}

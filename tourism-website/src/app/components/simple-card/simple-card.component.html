@@ -1,0 +1,24 @@
+<div [ngClass]="{'promotion': destination.promotionPercentage > 0, 'reserved': destination.isReserved}"
+    class="destination-card">
+    <img [src]="destination.isReserved ? 'http://localhost:8000/' + destination.photo + '?bw' : 'http://localhost:8000/' + destination.photo"
+        alt="Destination Image" class="destination-image">
+    <div class="destination-info">
+        <h2 class="destination-title" style="font-family: 'Afacad';">{{ destination.location }}</h2>
+        <p class="destination-description">{{ destination.description }}</p>
+        <p class="no-people">No people: {{ destination.numberOfPeople }}</p>
+        <p class="price-description">
+            Price:
+            <span *ngIf="destination.promotionPercentage > 0" class="original-price">{{ destination.price
+                }}€/night</span>
+            <span *ngIf="destination.promotionPercentage > 0" class="discounted-price">{{ destination.price -
+                (destination.price * (destination.promotionPercentage / 100)) }}€/night</span>
+            <span *ngIf="destination.promotionPercentage <= 0">{{ destination.price }}€/night</span>
+        </p>
+        <p class="date-description"> Date: {{ destination.startDate }} - {{ destination.endDate }}</p>
+        <button mat-raised-button color="primary" style="margin-right:10px"
+            *ngIf="!destination.isReserved &&  verifyIfLoggedIn()" (click)="openDialog(destination)">Make
+            reservation</button>
+        <button mat-raised-button color="primary" *ngIf="isAdmin()" (click)="openDialog(destination)">View
+            reservations</button>
+    </div>
+</div>
